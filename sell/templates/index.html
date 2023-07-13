@@ -1,0 +1,74 @@
+{% extends 'theam.html'%}
+{% block content %}
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.html">Home&living</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Beauty</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+         {% for y in x %}
+        <div class="col-md-3">
+<div class="card" style="width: 18rem;">
+  <img src="{{y.image}}" class="card-img-top" alt="..." height="200">
+  <div class="card-body">
+    <h5 class="card-title">{{y.name}}</h5>
+      <h5 class="card-title">{{y.price}}</h5>
+      <h5 class="card-title">{{y.stock}}</h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary">BUY</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="row copyright">
+  <div class="footer-menu">
+
+  <a href="">Home</a>
+  <a href="">F.A.Q</a>
+  <a href="">Cookies Policy</a>
+  <a href="">Terms Of Service</a>
+  <a href="">Support</a>
+
+  </div>
+   <p>Copyright &copy; 2022</p>
+</div>
+
+{% endblock %}
+
+
